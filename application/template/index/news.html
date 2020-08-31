@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .lists-box{
+            width: 1000px;
+            background: #fff;
+            margin: 10px auto;
+            border: 1px solid red;
+            padding: 0 50px;
+            box-sizing: border-box;
+            height: 410px;
+        }
+
+        .list-content{
+            width: 800px;
+            margin: auto;
+        }
+        .list a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .list{
+            float: left;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{include file=$header}
+<ul class="lists-box">
+    <div class="list-content">
+        {foreach $sonInfo as $v}
+        <li class="list">
+            <a href="/study/mvc/index.php/index/lists?cid={$v['cid']}">
+                <img src="{IMAGE_ADD}icon.png" alt="">
+                <h3>{$v["cname"]}</h3>
+                <div>{$v["info"]}</div>
+            </a>
+        </li>
+        {/foreach}
+    </div>
+
+</ul>
+
+{include file=$footer}
+</body>
+</html>

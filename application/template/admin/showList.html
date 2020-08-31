@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{BOOT_ADD}">
+</head>
+<body>
+<div class="container" style="margin-top: 20px">
+    <table class="table table-bordered">
+        <tr>
+            <th>板块</th>
+            <th>标题</th>
+            <th>操作</th>
+        </tr>
+        {foreach $data as $v}
+        <tr>
+            <td>
+                {$v["cname"]}
+            </td>
+            <td>
+                {$v["ctitle"]}
+            </td>
+            <td>
+                <a href="/study/mvc/index.php/admin/content/show?conid={$v['conid']}">查看</a>
+                <a href="/study/mvc/index.php/admin/content/edit?conid={$v['conid']}">编辑</a>
+            </td>
+        </tr>
+        {/foreach}
+    </table>
+
+</div>
+
+</body>
+</html>

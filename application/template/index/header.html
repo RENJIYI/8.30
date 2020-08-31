@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="{CSS_ADD}index/index.css">
+
+<header>
+    <div class="logo">
+        <img src="{IMAGE_ADD}logo.png" alt="佳速">
+        <h3>更好更快的互联网开发服务商</h3>
+    </div>
+
+    <ul class="menu">
+        {foreach $menuData as $v}
+        <li>
+            <a href="/study/mvc/index.php/index/category?cid={$v['cid']}">{$v["cname"]}</a>
+            {if isset($v["child"])}
+            <ul class="son">
+                {foreach $v["child"] as $v1}
+                <li>
+                    <a href="/study/mvc/index.php/index/lists?cid={$v1['cid']}">{$v1["cname"]}</a>
+                </li>
+                {/foreach}
+            </ul>
+            {/if}
+        </li>
+        {/foreach}
+    </ul>
+</header>
+<div class="wheel" style="background: orange;width: 100%;height: 300px"></div>

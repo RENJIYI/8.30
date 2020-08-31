@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .my-service{
+            width: 1000px;
+            text-align: center;
+            margin: 10px auto;
+            background: #fff;
+        }
+        .my-service-box{
+            width: 800px;
+            margin: auto;
+        }
+
+        .my-service-list{
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+
+        .youshi{
+            width: 1000px;
+            text-align: center;
+            margin: 10px auto;
+            background: #fff;
+        }
+        .youshi-box{
+            width: 800px;
+            margin: auto;
+        }
+
+        .youshi-box-list{
+            float: left;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        .youshi-box-list li{
+            float: left;
+            /*border: 1px solid red;*/
+        }
+            h1,h2,h3,h4,h5,h6{
+                padding: 0;
+                margin: 0;
+            }
+        .youshi-box-list li:nth-child(1){
+            width: 100px;
+            height: 100px;
+        }
+
+        .youshi-box-list li:nth-child(2){
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body style="background: #efefef">
+{include file=$header}
+<div class="my-service">
+    <h3>{$soninfo[0]["cname"]}</h3>
+    <h6>{$soninfo[0]["info"]}</h6>
+    <div class="my-service-box">
+        {foreach $coninfo[0] as $v}
+        <ul class="my-service-list">
+            <li>
+                <img src="{IMAGE_ADD}icon.png" alt="">
+            </li>
+            <li>{$v["ctitle"]}</li>
+            <li>$v["cons"]</li>
+
+        </ul>
+        {/foreach}
+        <div style="clear: both"></div>
+    </div>
+
+</div>
+<div class="youshi">
+    <h3>{$soninfo[1]["cname"]}</h3>
+    <h6>{$soninfo[1]["info"]}</h6>
+    <div class="youshi-box">
+        {foreach $coninfo[1] as $v}
+        <ul class="youshi-box-list">
+            <li>
+                <img src="{IMAGE_ADD}icon.png" alt="">
+            </li>
+            <li>{$v["ctitle"]}</li>
+            <li>$v["cons"]</li>
+
+        </ul>
+        {/foreach}
+        <div style="clear: both"></div>
+    </div>
+</div>
+
+
+{include file=$footer}
+
+</body>
+</html>
